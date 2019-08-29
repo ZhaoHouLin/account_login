@@ -17,11 +17,15 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
   console.log(req.body);
-  // const email = req.body.email;
-  // const password = req.body.password;
   const keyinData = req.body;
   const verifyResults = verification(keyinData);
-  res.render("index");
+
+  if (typeof verifyResults === "object") {
+    res.render("login_success", { verifyResults });
+  } else {
+    res.render("index", { verifyResults, option: keyinData });
+  }
+  // console.log(verifyResults);
 });
 
 app.listen(port, () => {

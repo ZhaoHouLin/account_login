@@ -2,6 +2,7 @@
   font-family: Microsoft JhengHei;
   padding: 0;
   margin: 0;
+  transition: 0.5s;
 }
 html,
 body {
@@ -24,10 +25,11 @@ form {
   align-items: center;
 }
 .card {
+  z-index: 2;
   border-radius: 16px;
   box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   width: 300px;
-  height: 400px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,6 +47,8 @@ form {
   margin-top: 12px;
 }
 .card span {
+  margin: 8px;
+  height: 8px;
   color: #f00;
   font-size: 8px;
 }
@@ -59,4 +63,92 @@ button {
   color: #fff;
   border-radius: 16px;
   font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #fff;
+  color: #00a1ff;
+}
+.circleL {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+  left: -50%;
+  animation: lToR 5s infinite alternate;
+}
+.circleR {
+  position: absolute;
+  width: 100vh;
+  height: 100vh;
+  border-radius: 50%;
+  background-color: #eee;
+  right: -50%;
+  animation: rToL 5s infinite alternate;
+}
+@-moz-keyframes lToR {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-webkit-keyframes lToR {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-o-keyframes lToR {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes lToR {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@-moz-keyframes rToL {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@-webkit-keyframes rToL {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@-o-keyframes rToL {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
+}
+@keyframes rToL {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 100%;
+  }
 }
