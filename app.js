@@ -23,7 +23,7 @@ app.post("/", (req, res) => {
   if (typeof verifyResults === "object") {
     res.render("login_success", { verifyResults });
   } else {
-    res.render("index", { verifyResults, option: keyinData });
+    res.render("index", { verifyResults: true, option: keyinData });
   }
   // console.log(verifyResults);
 });
